@@ -1,0 +1,235 @@
+
+body{
+    margin: 0;
+    padding: 0;
+}
+#logo{
+    height: 120px;
+    width: 120px;
+    padding-left: 0;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+
+.header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #f7f4e7;
+    width: 100%;
+    margin-top: 0%;
+    height: min-content;
+    overflow: hidden;
+}
+
+
+.header button{
+    font-weight: bold;
+    border: none;
+    color: #bd8c5b;
+    margin-left: 50px ;
+    background-color:#f7f4e7;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    padding: 20px;
+}
+
+.header a{
+    margin-top: 2%;
+}
+
+.header button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10%;
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+
+}
+
+.content {
+    margin: 0px;
+    padding-top: 0px;
+    background-color: #f7f4e7;
+    min-height: calc(100vh - min-content);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+@keyframes slide-down{
+    from{
+        transform : translateY(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+ 
+
+}
+
+@keyframes slide-left {
+    from{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.name1{
+    color:#966941;
+    font-family: 'Abril Fatface';
+    font-weight: 150;
+    font-size: xx-large;
+    text-align: center;
+    padding-top: 150px;
+    animation: slide-down 2s ease-out;
+    margin-bottom: 170px;
+}
+
+
+.introduction{
+    display: flex;
+    justify-content: space-around;
+    background-color: #d96123;
+    color: white;
+    min-width: 100%;
+    height: 35rem ;
+    align-items: center;
+    margin-bottom: 120px;   
+    overflow: hidden;
+    animation: slide-down 1.5s ease-in;
+
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding inside the box */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transitions for hover effects */
+
+    p{
+        font-family: 'Trocchi';
+        font-stretch: extra-expanded;
+        font-size: large;
+        text-align: justify;
+        text-align-last:center ;
+        width: 70%;
+    }
+
+    
+}
+
+.introduction:hover{
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+
+
+.testimonials{
+    height: 50rem;
+    display: flexbox;
+    justify-content: center;
+    animation: slide-down 2s ease-in-out;
+    animation-delay: 50ms;
+}
+.testimonials h3, .testimonials h5{
+    text-align: center;
+    font-family: "Libre Baskerville";
+}
+
+.testimonials h3{
+    font-size: xx-large;
+    color:brown;
+}
+
+.testimonials h5{
+    font-size: medium;
+}
+
+
+.pictures{
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.pictures img{
+    height: 400px;
+    width: 450px;
+}
+
+.contactUs{
+    text-align: center;
+    overflow: hidden;
+    height: 100%;
+    background-color:#d96123;
+    h3{
+        font-family: 'Abril Fatface';
+        font-size: x-large;
+        color: white;
+    }
+
+    form{
+        width: 60%;
+        height: 25rem;
+        background-color: #eca580;
+        display: inline-block;
+        padding: 60px;
+        label{
+            font-size: medium;
+            color: black;
+            font-family: 'Sedan SC';
+        }
+        #desc{
+            display: flexbox;
+            justify-content: center;
+            height: 14rem;
+            width: 80%;
+            color:white;
+            margin-top: 1rem;
+        }
+        #name1,#email{
+            margin-left: 3rem;
+            margin-right: 5rem;
+            height: 2rem;
+            width: 12rem;
+            margin-bottom: 5rem;
+        }
+
+        input{
+            border-style: double;
+            border-width: 1px;
+        }
+    }
+
+    button{
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        padding: 1rem 2rem;
+        background-color:#966941;
+        border-style: dotted;
+        border-color: #966941;
+        color: white;
+        font-family: 'Playfair Display';
+        font-size: medium;
+        font-stretch:extra-expanded;
+        overflow: hidden;
+    }
+
+    button:hover{
+        cursor: pointer;
+        color: black;
+        background-color: white;
+    }
+}
+
+
+.trialClass{
+    color: pink;
+}

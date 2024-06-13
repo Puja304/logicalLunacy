@@ -1,0 +1,261 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f7f4e7;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f4e7;
+    width: 100%;
+    margin-top: 0%;
+    height: min-content;
+    overflow: hidden;
+
+    
+    #logo{
+        height: 100px;
+        width: 100px;
+        padding-left: 0;
+        margin-right: auto;
+    }
+
+    button{
+        font-weight: bold;
+        border: none;
+        color: #bd8c5b;
+        margin-left: 50px ;
+        background-color:#f7f4e7;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: medium;
+        padding: 20px;
+    }
+
+    button:hover{
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        border: solid;
+        border-width: 1px;
+        border-radius: 10%;
+    }
+    
+    a{
+        margin-top: 2%;
+    }
+
+    #name{
+        color: #966941;
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 450px;
+        margin-top: 50px;
+        font-size: xx-large;
+        font-family: 'Abril Fatface';
+        font-weight: lighter;
+    } 
+}
+
+
+.content{
+    #opening-stretch{
+        background-color: #d96123;
+        min-height: fit-content;
+        width: 100%;
+        overflow: hidden;
+        display: flexbox;
+        align-content: center;
+        padding-bottom: 5rem;
+        span{
+            display: inline-flex;
+            gap: 25rem;
+            justify-content: space-evenly;
+            align-content: center;
+            align-items: center;
+            h1{
+                color: white;
+                font-size: xx-large;
+                font-family: 'Abril Fatface';
+                margin-left: 3rem;
+                small{
+                    font-family: 'Playfair Display';
+
+                    font-size: medium;
+                }
+            }
+
+            img{
+                margin-top: 4.5rem;
+                height: 500px;
+                width: 700px;
+                margin-right: 3rem;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+
+            margin-bottom: 0%;
+        }
+
+        h5{
+            margin-top: 0%;
+            
+        }
+        
+
+    }
+
+    #all_services_spd{
+        height: 45rem;
+        align-content: center;
+        h1{
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        #spd{
+            display: inline-flex;
+            justify-content: space-around;
+        }
+
+        span{
+            height: 20rem;
+            width: 30%;
+            text-align: center;
+            h3{
+                font-size: large;
+                font-family: 'Libre Baskerville';
+                padding: 0px;
+            }
+            h5{
+                margin-top: 8%;
+                width: 30%;
+                margin-left: 35%;
+                height: 12rem;
+                font-size: medium;
+        
+            }
+
+        }
+
+        #nodejs{
+            background-color: #fdec8e; /*match #ecd23a */
+            
+        }
+
+        #refreshment{
+            background-color: #f9c4da; /*match #ef4a8e*/
+            
+        }
+
+        #fsd{
+            background-color: #abdbe3; /*match #22c7e2*/
+            
+        }
+
+    }
+
+    #all_services_design{
+        background-color: #d96123;
+        height: 45rem;
+        align-content: center;
+        h1{
+            color: white;
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        #design{
+            display: inline-flex;
+            justify-content: space-around;
+        }
+
+        span{
+            height: 20rem;
+            width: 30%;
+            text-align: center;
+            h3{
+                font-size: large;
+                font-family: 'Libre Baskerville';
+                padding: 0px;
+            }            
+            h5{
+                margin-top: 8%;
+                width: 30%;
+                margin-left: 35%;
+                height: 12rem;
+                font-size: medium;
+        
+            }
+
+        }
+
+        #digitalproduct{
+            background-color: #fdec8e; /*match #ecd23a */
+            
+        }
+
+        #Branding{
+            background-color: #f9c4da; /*match #ef4a8e*/
+            
+        }
+
+        #MotionDesign{
+            background-color: #abdbe3; /*match #22c7e2*/
+            
+        }
+
+
+    }
+}
+
+
+.ending{
+    display: flexbox;
+    text-align: center;
+    height: 15rem;
+    align-content: center;
+    h2{
+        font-family: 'Ubuntu Sans Mono';
+    }
+}
+
+@keyframes slide-down{
+    from{
+        transform : translateY(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+ 
+
+}
+
+@keyframes slide-left {
+    from{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#opening-stretch{
+    animation: slide-down 2s ease-out;
+}
+
+#all_services_spd{
+    animation: slide-left 2s ease-out;
+    animation-delay: 20ms;
+}
+
+#all_services_design{
+    animation: slide-left 2s ease-out;
+    animation-delay: 1s;
+}
+
+.trial{
+    height: max-content;
+}

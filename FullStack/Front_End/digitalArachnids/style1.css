@@ -1,0 +1,216 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f7f4e7;
+}
+
+#logo{
+    height: 100px;
+    width: 100px;
+    padding-left: 0;
+    margin-right: auto;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f4e7;
+    width: 100%;
+    margin-top: 0%;
+    height: min-content;
+    overflow: hidden;
+}
+
+.header button{
+    font-weight: bold;
+    border: none;
+    color: #bd8c5b;
+    margin-left: 50px ;
+    background-color:#f7f4e7;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    padding: 20px;
+}
+
+.header button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10%;
+}
+
+.header a{
+    margin-top: 2%;
+}
+
+#name{
+    color: #966941;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 450px;
+    margin-top: 50px;
+    font-size: xx-large;
+    font-family: 'Abril Fatface';
+    font-weight: lighter;
+} 
+
+
+.mainTitle {
+    margin-top: 200px;
+    text-align: center;
+    align-items: center;
+}
+
+.mainTitle > h1{
+    font-size: 100px;
+    font-family: 'Ubuntu Sans Mono';
+    color: #bd8c5b;
+}
+
+.mainTitle h3{
+    color: black;
+    text-align: justify;
+    text-align-last: center;
+    margin-right: 20%;
+    margin-left: 20%;
+    font-family: 'Libre Baskerville';
+    font-weight: medium;
+}
+
+
+
+.pricingBlocks > .block{
+    display: inline-block;
+    max-width: 17%;
+    align-content: center;
+    text-align: center;
+    margin: 0 3.5%;
+    border-style: solid;
+    border-width: 1.5px;
+    margin-bottom: 100px;    
+    border-style: groove;
+}
+
+.block > p{
+    text-align: center;
+    text-align-last: center;
+    margin-right: 20%;
+    margin-left: 20%;
+    font-family: 'Playfair Display';
+}
+
+.block > h5{
+    text-decoration: none;
+    font-family: 'Playfair Display';
+    font-weight: lighter;
+    font-size: 90%;
+}   
+
+.block{
+    border: black;
+}
+
+.pricingBlocks{
+    margin-top: 100px;
+}
+
+
+#individualPlan{
+    margin-left: 74px;
+    background-color: #fdec8e;
+    color: black;
+}
+
+#smallBusinessPlan{
+    background-color: #f9c4da;
+    color: black;
+}
+
+#largeCorporation{
+    background-color: #d96123;
+    color: white;
+}
+
+#megaEnterprise{
+    background-color: #0f4142;
+    color: white;
+}
+
+.block > h2{
+    font-family: 'Abril Fatface';
+}
+
+.block > button,h4{
+    font-family: 'Abril Fatface';
+    font-weight: lighter;
+}
+
+.block > button{
+    border-style: dotted;
+    max-width: fit-content;
+    align-items: center;
+    text-align: center; 
+    display: inline;               /*super importan, sets everything to center   */  
+    font-size: larger;
+}                
+
+#individualPlan > button{
+    background-color: #f3d427;
+    color: black;
+
+}
+
+#smallBusinessPlan > button{
+    background-color: #f35193;
+    color: black;
+}
+
+#largeCorporation > button{
+    background-color: #eca580;
+    color: white;
+}
+
+#megaEnterprise > button{
+    background-color: #4b989a;
+    color: white;
+}
+
+.block > button:hover{
+    cursor: pointer;
+}
+
+@keyframes slide-down{
+    from{
+        transform : translateY(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+ 
+
+}
+
+@keyframes slide-left {
+    from{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.mainTitle{
+    animation: slide-down 2s ease-out;
+}
+
+.pricingBlocks{
+    animation: slide-down 2s ease-out;
+    animation-delay: 30ms;
+}

@@ -1,0 +1,122 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#logo{
+    height: 100px;
+    width: 100px;
+    padding-left: 0;
+    margin-right: auto;
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff4fc;
+    width: 100%;
+    margin-top: 0%;
+    height: min-content;
+    overflow: hidden;
+}
+
+
+.header button{
+    margin-top: 2%;
+    margin-left: 50px ;
+    background-color:#fff4fc;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    border: none;
+    padding: 20px;
+}
+
+.header button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10%;
+}
+
+.content{
+    margin: 0px;
+    padding-top: 0px;
+    background-color: #120B24;
+    min-height: calc(100vh - min-content);
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+@keyframes slide-down{
+    from{
+        transform : translateY(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+ 
+
+}
+
+@keyframes slide-left {
+    from{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.name{
+    color:#D15DA1;
+    font-family: 'Abril Fatface';
+    font-weight: 150;
+    font-size: x-large;
+    text-align: center;
+    padding-top: 150px;
+    animation: slide-down 2s ease-out;
+}
+
+.newButtons{
+    text-align: center;
+}
+
+.newButtons button{
+    margin: 25px;
+    padding: 10px;
+    color:#120B24;
+    width: 150px;
+    height: 40px;
+    align-items: center;
+    font-size: medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 10px;
+    animation: slide-left 2s ease-out;
+}
+
+.newButtons button:hover{
+    background-color: #fff4fc;
+    cursor: pointer;
+    border: solid;
+}
+
+.introduction{
+    color: #fff4fc;
+    text-align: justify;
+    text-align-last:center ;
+    font-family: 'Trocchi';
+    font-stretch: expanded;
+    font-size: large;
+    max-width: 30%;
+    margin-left: 35%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    animation: slide-down 1.5s ease-in;
+}
+
