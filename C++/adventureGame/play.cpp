@@ -90,6 +90,8 @@ play::play(){
 
     item objectWT ("wall");
     objectWT.setInteract(item::foundSword);
+    item objectSAT("book");
+    objectSAT.setInteract(item::playIt);
 
     locations[11] = new area{31,20,true, object1, object2, object3};
     locations[12] = new area{31,60,false, object1, object2, objectDC};
