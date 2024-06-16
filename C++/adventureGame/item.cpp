@@ -53,7 +53,7 @@ string item::digitCode(item& something){
                 if(code_num == code){
                     cout << "Congrats! You found a key!" << endl;
                     something.solveIt();
-                    break;
+                    return "key1";
 
                 } else if(code_num != code){
                     cout << "Try again" << endl;

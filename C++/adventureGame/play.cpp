@@ -109,7 +109,7 @@ void play::rooms_and_items(){
     item dresser("dresser");
     dresser.setInteract(item::digitCode);
 
-    locations[11] = new area{31,20,false, plant, desk, dresser};
+    locations[11] = new area{31,20,true, plant, desk, dresser};
     locations[12] = new area{31,60,false, plant, desk, dresser};
     locations[13] = new area{29,108,false, 3, plant, desk, dresser};
     locations[14] = new area{20, 59,true, plant, desk, dresser};
@@ -119,12 +119,12 @@ void play::rooms_and_items(){
     locations[18] = new area{6, 44,true, plant, desk, dresser};
     locations[19] = new area{6,24,false, plant, desk, dresser};
 
-    locations[11]->addDescription("You enter room 1. Light rays of sunshine filter through a window sill high atop the wall, fighting to make itself seen"
+    locations[11]->addDescription("You enter room 1. ");
+    locations[12]->addDescription("You enter room 2. Light rays of sunshine filter through a window sill high atop the wall, fighting to make itself seen"
     " through a screen of grime. It falls onto a little plant, not looking to be in the best shape. Under the windown-sill stands wbat was once "
     "surely a robust wooden desk of dark mahogany, but was now a just rickety table with dangerously chipped edges. The desk faced a compact single bed that lay"
     " adjacent to the wall. Beside the bed was a plain dresser. The floor had the same rot as the one in the hallway, and you stepped"
     " gingerly on it as you examined the items around. Enter the name of any item you wish to interact with (single word) : \n");
-    locations[12]->addDescription("This is room 2");
     locations[13]->addDescription("This is room 3");
     locations[14]->addDescription("This is room 4");
     locations[15]->addDescription("This is room 5");

@@ -96,8 +96,9 @@ int monster::fight(int weaponLevel, int userHealth, bool hasBomb){
             cout << "You die" << endl;
             return -1;
         } else{
+            int projected = (health - ((weaponLevel-1) * 15) + (level * 5));
             if (hasBomb){
-                cout << "It is halfway through the fight and your health is at "<< userHealth - (level * 10) << " while " << name << "'s health is at "<< health - (weaponLevel * 15) + (level * 5) << ". Enter c to continue fighting or 'sb' to escape using a smoke bomb" << endl;
+                cout << "It is halfway through the fight and your health is at "<< userHealth - (level * 10) << " while " << name << "'s health is at "<< projected - (projected%100) << ". Enter c to continue fighting or 'sb' to escape using a smoke bomb" << endl;
                 string response;
                 bool quitting = false;
                 while(true){
@@ -116,7 +117,7 @@ int monster::fight(int weaponLevel, int userHealth, bool hasBomb){
                 }
 
             }
-            if(userHealth <= level * 10 || ((userHealth - (level * 15) + (level * 5)) < (health - (weaponLevel * 15) + (level * 5)) )){
+            if(userHealth <= level * 10 || ((userHealth - (level * 15) + (level * 5)) < projected)){
                 cout << "You die " << endl;
                 return -1;
             }
