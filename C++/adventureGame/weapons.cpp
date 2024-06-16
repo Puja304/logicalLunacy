@@ -9,6 +9,11 @@ weapon::weapon(){
 weapon::weapon(int wLevel){
         switch (wLevel)
         {
+        case 0:
+            level = 0;
+            name = "Smoke Bomb";
+            description = "A bomb that blinds the enemies and give you time to escape";
+            break;
         case 1:
             level = 1;
             name = "The Sword of Sorrows";

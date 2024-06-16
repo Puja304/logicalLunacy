@@ -7,7 +7,20 @@ play::play(){
                 mainMap[i][j] = ' ';
             }
     }
+    grid_layout();
+    hallway_locations();
+    rooms_and_items();
+    
+    
 
+    weapon smokeBomb1(0);
+    gamer.add_weapon(smokeBomb1);
+}
+
+
+
+
+void play::grid_layout(){
     rc_converter('r', 0, 0, 119, '-');
     rc_converter('r', 39, 0, 119, '-');
     rc_converter('c', 0, 0, 39, '|');
@@ -45,6 +58,10 @@ play::play(){
     rc_converter( 'r',4,0, 85, '-');
     rc_converter( 'r',1,0, 92, '-');
 
+}
+
+
+void play::hallway_locations(){
     locations[0] = new area(37,5);
     locations[0]->addDescription("You are at the front door");
 
@@ -76,34 +93,37 @@ play::play(){
     locations[9]->addDescription("You are outside room 9");
 
     locations[10] = new area{3, 3};
-    locations[10]->addDescription("You are at the aexit door");
+    locations[10]->addDescription("You are at the exit door");
+}
 
-    item object1 ("piano");
-    object1.setInteract(item::playIt);
-    item object2("plant");
-    object2.setInteract(item::playIt);
-    item object3 ("sofa");
-    object3.setInteract(item::playIt);
 
-    item objectDC ("box");
-    objectDC.setInteract(item::digitCode);
+void play::rooms_and_items(){
 
-    item objectWT ("wall");
-    objectWT.setInteract(item::foundSword);
-    item objectSAT("book");
-    objectSAT.setInteract(item::playIt);
 
-    locations[11] = new area{31,20,true, object1, object2, object3};
-    locations[12] = new area{31,60,false, object1, object2, objectDC};
-    locations[13] = new area{29,108,false, 3, object1, object2, object3};
-    locations[14] = new area{20, 59,true, object1, object2, object3};
-    locations[15] = new area{20, 34,false, 1, object1, object2, object3};
-    locations[16] = new area{13,103,false, object1, object2, object3};
-    locations[17] = new area{6,64,false, 2, object1, object2, object3};
-    locations[18] = new area{6, 44,true, object1, object2, object3};
-    locations[19] = new area{6,24,false, object1, object2, objectWT};
+    item plant("plant");
+    plant.setInteract(item::waterIt);
 
-    locations[11]->addDescription("This is room 1");
+    item desk("desk");
+    desk.setInteract(item::deskNotebook);
+
+    item dresser("dresser");
+    dresser.setInteract(item::digitCode);
+
+    locations[11] = new area{31,20,false, plant, desk, dresser};
+    locations[12] = new area{31,60,false, plant, desk, dresser};
+    locations[13] = new area{29,108,false, 3, plant, desk, dresser};
+    locations[14] = new area{20, 59,true, plant, desk, dresser};
+    locations[15] = new area{20, 34,false, 1, plant, desk, dresser};
+    locations[16] = new area{13,103,false, plant, desk, dresser};
+    locations[17] = new area{6,64,false, 2, plant, desk, dresser};
+    locations[18] = new area{6, 44,true, plant, desk, dresser};
+    locations[19] = new area{6,24,false, plant, desk, dresser};
+
+    locations[11]->addDescription("You enter room 1. Light rays of sunshine filter through a window sill high atop the wall, fighting to make itself seen"
+    " through a screen of grime. It falls onto a little plant, not looking to be in the best shape. Under the windown-sill stands wbat was once "
+    "surely a robust wooden desk of dark mahogany, but was now a just rickety table with dangerously chipped edges. The desk faced a compact single bed that lay"
+    " adjacent to the wall. Beside the bed was a plain dresser. The floor had the same rot as the one in the hallway, and you stepped"
+    " gingerly on it as you examined the items around. Enter the name of any item you wish to interact with (single word) : \n");
     locations[12]->addDescription("This is room 2");
     locations[13]->addDescription("This is room 3");
     locations[14]->addDescription("This is room 4");
@@ -113,6 +133,7 @@ play::play(){
     locations[18]->addDescription("This is room 8");
     locations[19]->addDescription("This is room 9");
 }
+
 
 void play::rc_converter(char roc, int rcn, int beg, int end, char charac){
     if(roc == 'r'){
@@ -152,7 +173,6 @@ void play::display_stats(){
     cout << endl << endl << endl << endl;
     cout << "Lives: " << gamer.getLives() <<"    Health:" << gamer.gethealth() << "                                                     Menu: " << endl;
     cout << "                                                                            Map" << endl;
-    cout << "                                                                          Weapons" << endl;
     cout << "                                                                         Inventory" << endl;
     cout << endl << endl;
 }
@@ -245,7 +265,7 @@ int play::getCurrentPosition(){
 
 
 void play::helpCommnads(){
-    cout << R"(d : move forward (hallway only)
+    cout << R"(    d : move forward (hallway only)
     a: go back (hallway only)
     w: enter room
     s: exit room
@@ -260,14 +280,14 @@ void play::helpCommnads(){
 void play::lore(){
     cout << "\nWelcome to Derelict Nightmares. Your name is Volchitsa Okhotnik and you are humanity's last hope.\n\nIt all began 3 months ago, when King Lycaon of the Werewolves, in a greedy frenzy for more people, attempted to engineer a virus that turned " 
     "humans into werewolves. Only he failed, and unleashed something far more sinsiter into the world. The infected slowly went mad with rage, turning less and "
-    "less human with each passing day. They became exceedingly picky eaters, finding fewr thibg edible from one day to the next, until the only "
+    "less human with each passing day. They became exceedingly picky eaters, finding fewer things edible from one day to the next, until the only "
     "thing that could satiate them was the flesh of those around them. One bite was all it took to spread the virus onto their victim. The worst part," 
-    "however, was the mind control. The werewold blood in the virus made the infected susceptible to mind-control by the Lycaon and his people, giving him "
+    "however, was the mind control. The werewold blood in the virus made the infected susceptible to mind-control by Lycaon and his people, giving him "
     "a growing army of immortal slaves. The slave-master connection is what keeps the infected 'alive'\n\nThe werewolves are high on power, but there are a select few in their ranks who question the morality of their actions. These wolves, condemned "
     "as 'traitors' by their King, have banded together to help the humans. They seek hiddens groups of people, like yourself and your familiy, and take them"
-    " to known safe spaces. You were journeying with them when you found out the likely location of the King Lycaon, and learnt that killing him would"
-    " sever werewolves' connection with all of the enslaved infected, turning them immobile. You were attacked shortly afrer, and watched you family get"
-    " torn to pieces as you escaped by a thread. You now stand in before the building King Lycaon is rumored to be in, with an army of the infected not far"
+    " to known safe spaces. You were journeying with them when you found out the likely location of King Lycaon, and learnt that killing him would"
+    " sever werewolves' connection with all of the enslaved infected, turning them immobile. You were attacked shortly after, and watched you family get"
+    " torn to pieces as you escaped by a thread. You now stand before the building King Lycaon is rumored to be in, with an army of the infected not far"
     " behind. Your sole bit of luck comes from the King's paranoid distrust translating into a werewolf-less protection detail. He does, however, get a little"
     " enchanted help. You must defeat the King and exit the building before either the infected find you or his loyal wolves come running at the death of "
     "their King. Good Luck.\n\n Enter 'p' to begin playing" << endl;
@@ -275,4 +295,16 @@ void play::lore(){
 
 void play::unlock(int a){
     locations[a + 10]->key_Found();
+}
+
+
+
+void play::displayWeapons(){
+    for (int i = 0; i < gamer.getWeaponCount(); i++){
+        if (gamer.getWeaponCount() == 0){
+            cout <<"Your inventory is empty" << endl;
+        }
+        weapon aWeapon = gamer.getWeapon(i); 
+        cout << i+1 << ") type : Weapon                  Name: " << aWeapon.name  << "            Lvl.: " <<aWeapon.level << endl;
+    }
 }

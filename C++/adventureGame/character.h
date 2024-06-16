@@ -16,7 +16,7 @@ class character {
     item items[4];
     int smoke_bombs;
     int item_count = 0;
-    bool alive: true;
+    bool alive= true;
     bool hasSmokeBomb;
 
     public:
@@ -24,13 +24,11 @@ class character {
 
     ~character();
 
-
-
     int gethealth();
 
     int getLives();
 
-    weapon* getWeapon();
+    weapon getWeapon(int a);
 
     int getWeaponCount();
 

@@ -18,8 +18,8 @@ void item::setInteract(string (*interaction)(item& rn)){
     interactionFunction = interaction;
 }
 
-string item::playIt(item& something){
-    cout << "You played the piano" << endl;
+string item::waterIt(item& something){
+    cout << "You water the plant. It looks happy in the sunlight." << endl;
     return "";
 }
 
@@ -37,11 +37,13 @@ void item::solveIt(){
 
 string item::digitCode(item& something){
        if(something.isSolved() == true){
-        cout << "You see an empty box" << endl;
+        cout << "You see an empty chest on the dresser." << endl;
         return "";
         exit;
        }
-        int code = 8312;
+       cout << "The dresser has a pale golden chest on it, its color blackened with age and its paint chipped in more places than not. You try to open the chest, but find it locked. Upon closer"
+       " examination, you see it has three little dials to input a code. Enter a code to try and open it, or enter 'x' to stop interacting with it" << endl;
+        int code = 430;
         string user_code;
         while(true){
             try
@@ -153,7 +155,24 @@ string item::foundKey8(item& something){
     }
 }
 
+string item::deskNotebook(item& something){
+    cout << "You take a tentative step towards the desk, the rotten wood under your feet creaking with every step. You stand over the dust-covered piece of furniture, unwilling"
+    "to touch anything, when you notice a drawer sticking out at the bottom, slightly open. You open the drawer to find a notebook. DR. JACE MONROE it says, "
+    "in a big, messy scrawl on the top of the notebook. You open it and find a few numbers written and scratched out. It looks like someone was trying to "
+    "crack a code." << endl;
 
+    cout << "2 0 6   --> 1, wrong" << endl;
+    cout << "0 1 4   --> 2, wrong" << endl;
+    cout << "1 3 7   --> 1, correct" << endl;
+    cout << "5 4 9   --> 1, wrong" << endl;
+    cout << "9 2 1   --> 0" << endl;
+    
+
+    cout << "You are unsure what the keywords mean exactly, but they probably indicate the number of values that exist in the actual code and how many are"
+    "correctly places in that attempt." << endl;
+
+    return "";
+}
 
 
 

@@ -97,7 +97,7 @@ int monster::fight(int weaponLevel, int userHealth, bool hasBomb){
             return -1;
         } else{
             if (hasBomb){
-                cout << "It is halfway through the fight and your health is at "<< userHealth - (level * 10) << "while " << name << "'s health is at "<< health - (weaponLevel * 15) + (level * 5) << ". Enter c to continue fighting or 'sb' to escape using a smoke bomb" << endl;
+                cout << "It is halfway through the fight and your health is at "<< userHealth - (level * 10) << " while " << name << "'s health is at "<< health - (weaponLevel * 15) + (level * 5) << ". Enter c to continue fighting or 'sb' to escape using a smoke bomb" << endl;
                 string response;
                 bool quitting = false;
                 while(true){

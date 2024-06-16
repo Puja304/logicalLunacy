@@ -1,6 +1,6 @@
 #include "play.h"
 //#include <cstdlib>
-
+//g++ area.cpp character.cpp in_motion.cpp item.cpp monster.cpp play.cpp weapons.cpp -o wePl
 int main(void) {
     play firstGame;
     firstGame.lore();
@@ -11,7 +11,7 @@ int main(void) {
             firstGame.map_printer();
             cout << "You are by the front door of the building. You can only exit from the end of the building, the door to which is locked. You must find the exit key before the infected catch up. You can move back and forth in the hallway and "
             "enter and exit rooms. Within rooms, you can interact with objects and collect items such as keys. To see where you are, you have access to a map. You also have an inventory of weapons"
-            " which you may use. Here is a list of commands (enter 'help while in the hallway to view these again') : " << endl;
+            " which you may use. Here is a list of commands (enter 'help' to view these again.) : " << endl;
             firstGame.helpCommnads();
             break;
         } else if (response == "exit"){
@@ -43,6 +43,8 @@ int main(void) {
             break;
         }else if(response == "help"){
             firstGame.helpCommnads();
+        }else if (response == "i" || response == "invenotory"){
+                firstGame.displayWeapons();
         }else if (currentArea->isRoom()){
             int count = 0;
             for (int i = 0; i < 3; i++){

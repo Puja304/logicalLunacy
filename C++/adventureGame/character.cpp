@@ -21,8 +21,8 @@ using namespace std;
         return lives;
     }
 
-    weapon* character::getWeapon(){
-        return weapons;
+    weapon character::getWeapon(int a){
+        return weapons[a];
     }
 
     int character::getWeaponCount(){
@@ -85,10 +85,7 @@ using namespace std;
     }
 
     void character::add_weapon(weapon& weapon1){
-        cout << "Checkpoint 1" << endl;
         weapons[weapon_count++] = weapon1;
-        cout << "Name: " <<  weapon1.name << "             Level: " << weapon1.level  << endl;
-        cout << weapon1.description << endl;
     }
 
     bool character::hasSB(){

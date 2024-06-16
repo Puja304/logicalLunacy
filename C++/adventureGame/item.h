@@ -28,7 +28,7 @@ class item{
 
     //each individual interaction function
 
-    static string playIt(item& something);
+    static string waterIt(item& something);
 
     static string digitCode(item& something);
 
@@ -45,6 +45,8 @@ class item{
     static string foundKey4(item& something);
 
     static string foundKey8(item& something);
+
+    static string deskNotebook(item& something);
 };
 
 

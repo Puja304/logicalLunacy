@@ -55,8 +55,9 @@ class play {
 
     bool point_1();
 
-    //
     void display_stats();
+
+    void displayWeapons();
 
     area* getArea();
 
@@ -67,6 +68,12 @@ class play {
     void unlock(int a);
 
     void lore();
+
+    void grid_layout();
+
+    void rooms_and_items();
+
+    void hallway_locations();
 };
 
 
